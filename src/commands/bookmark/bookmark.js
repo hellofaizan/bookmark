@@ -9,7 +9,8 @@ module.exports = {
         .setDescription('Add a bookmark to the database')
         .addStringOption(option => option.setName('url').setDescription('The url to add to the database').setRequired(true)),
     async execute(interaction, client) {
-        // get url from interaction
+        // check if author id matches with my id
+        if (interaction.user.id !== '890232380265222215') return interaction.reply('❌ You are not allowed to use this command');
         const url = interaction.options.getString('url');
         const body = JSON.stringify({
             url: url
