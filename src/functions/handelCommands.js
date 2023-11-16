@@ -2,8 +2,8 @@ const { REST } = require("@discordjs/rest");
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 
-const clientId = '*******************'; // Your Discord Bot client ID
-const guildId = '*******************'; // Your Discord Server ID just for testing
+const clientId = "1174632366791208981" // Your Discord Bot client ID
+const guildId = "1064854195389345813" // Your Discord Server ID just for testing
 
 module.exports = (client) => {
     client.handleCommands = async (commandFolders, path) => {
