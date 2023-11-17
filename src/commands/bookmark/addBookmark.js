@@ -5,10 +5,10 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('bookmark')
+        .setName('addbookmark')
         .setDescription('Add a bookmark to the database')
         .addStringOption(option => option.setName('url').setDescription('The url to add to the database').setRequired(true)),
-    async execute(interaction, client) {
+    async execute(interaction) {
         // check if author id matches with my id
         if (interaction.user.id !== '890232380265222215') return interaction.reply('❌ You are not allowed to use this command');
         const url = interaction.options.getString('url');
@@ -29,6 +29,9 @@ module.exports = {
         if (res.ok) {
             // if response is ok, send message to user and delete the message of user
             interaction.reply('✨ Added to bookmarks! ' + url);
+        } else {
+            interaction.reply('❌ Error adding to bookmarks! ' + url);
         }
+
     }
 }
