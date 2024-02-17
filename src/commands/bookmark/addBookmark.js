@@ -16,7 +16,7 @@ module.exports = {
             url: url
         })
         // Axios post request to add link to database
-        const res = await fetch('https://hellofaizan.me/api/addBookmark', {
+        const res = await fetch('https://hellofaizan.tech/api/addBookmark', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
