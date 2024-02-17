@@ -9,7 +9,7 @@ module.exports = {
         .setDescription('Get all bookmarks from database'),
     async execute(interaction) {
         // Axios post request to add link to database
-        const res = await fetch('https://hellofaizan.me/api/bookmarks').catch(err => {
+        const res = await fetch('https://hellofaizan.tech/api/bookmarks').catch(err => {
             interaction.reply('❌ Error showing all bookmarks! ');
         });
         if (res.ok) {
